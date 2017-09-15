@@ -1,16 +1,28 @@
-package by.bsu.test_class;
+class Book {
+    public String title;
+    public void setTitle (String title) {
+        this.title = title;
+    }
+}
 
 public class test_class {
-    public static void main(String[ ] args) {
-        System.out.println(args.length);
-        for ( int i = 1; i <= args.length; i++){
-            System.out.println(args[i]);
-        }
-        System.out.print ("A");
-        test_class.main ("java7");
+    private static int defineBonus(int purchasedItems) {
+        int bonus;
+        bonus = purchasedItems >= 3 ? 10 : 0 ;
+        return bonus;
     }
-    private static void main (String args) {
-        System.out.println(args);
-        System.out.print ("B");
+
+    public static void main (String [] args) {
+        Book book1 = new Book (); book1.setTitle ("Java 7");
+        Book book2 = new Book (); book2.setTitle ("Java 7");
+        System.out.println(book1.title);
+        System.out.println(book2.title);
+
+        if (book1.title.equals(book2.title)) {
+            System.out.println ("True");
+        } else {
+            System.out.println ("False");
+        }
+        System.out.println("Discount is: " + defineBonus(3) + "%");
     }
 }
